@@ -14,7 +14,7 @@ class Car {
         this.controls = new Controls();
     }
 
-    update() {
+    #move() {
 
         // user presses the Y controls
         if (this.controls.forward) {
@@ -64,6 +64,10 @@ class Car {
         // change CAR's position by speed value and angle
         this.x -= Math.sin(this.angle) * this.speed;
         this.y -= Math.cos(this.angle) * this.speed;
+    }
+
+    update() {
+        this.#move();
     }
 
     draw(ctx) {
