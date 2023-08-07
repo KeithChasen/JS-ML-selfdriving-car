@@ -40,6 +40,10 @@ class Car {
             this.speed += this.friction;
         }
 
+        if (Math.abs(this.speed) < this.friction) {
+            this.speed = 0;
+        }
+
         // change y position by speed value
         this.y-=this.speed;
     }
