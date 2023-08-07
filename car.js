@@ -46,14 +46,17 @@ class Car {
         }
 
 
-        // user presses the X controls
-        if (this.controls.left) {
-            this.angle += 0.03;
-        }
+        if (this.speed != 0) {
+            // user presses the X controls
+            if (this.controls.left) {
+                this.angle += 0.03;
+            }
 
-        if (this.controls.right) {
-            this.angle -= 0.03;
+            if (this.controls.right) {
+                this.angle -= 0.03;
+            }
         }
+        
 
         // change CAR's position by speed value and angle
         this.x -= Math.sin(this.angle) * this.speed;
