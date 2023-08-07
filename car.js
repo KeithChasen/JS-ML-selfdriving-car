@@ -9,13 +9,14 @@ class Car {
         this.acceleration = 0.2;
         this.maxSpeed = 3;
         this.friction = 0.05;
+        this.angle = 0;
 
         this.controls = new Controls();
     }
 
     update() {
 
-        // user presses the controls
+        // user presses the Y controls
         if (this.controls.forward) {
             this.speed+=this.acceleration;
         }
@@ -43,6 +44,19 @@ class Car {
         if (Math.abs(this.speed) < this.friction) {
             this.speed = 0;
         }
+
+
+        // user presses the X controls
+        if (this.controls.left) {
+            this.x -= 2;
+        }
+
+        if (this.controls.right) {
+            this.x += 2;
+        }
+
+
+
 
         // change y position by speed value
         this.y-=this.speed;
