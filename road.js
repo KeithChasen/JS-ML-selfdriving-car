@@ -29,6 +29,14 @@ class Road {
                 i/this.laneCount
             );
 
+            // adding dashes
+            // if line is not left or right
+            if (i > 0 && i < this.laneCount) {
+                ctx.setLineDash([20, 20]);
+            } else {
+                ctx.setLineDash([]);
+            }
+
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
