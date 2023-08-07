@@ -55,11 +55,9 @@ class Car {
             this.angle -= 0.03;
         }
 
-
-
-
-        // change y position by speed value
-        this.y-=this.speed;
+        // change CAR's position by speed value and angle
+        this.x -= Math.sin(this.angle) * this.speed;
+        this.y -= Math.cos(this.angle) * this.speed;
     }
 
     draw(ctx) {
