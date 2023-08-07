@@ -8,7 +8,7 @@ class Sensor {
         this.rays = [];
     }
 
-    update() {
+    #castRays() {
         this.rays = [];
         for (let i = 0; i < this.rayCount; i++) {
             const rayAngle = lerp(
@@ -24,6 +24,10 @@ class Sensor {
             }
             this.rays.push([start, end]);
         }
+    }
+
+    update() {
+        this.#castRays();
     }
 
     draw(ctx) {
